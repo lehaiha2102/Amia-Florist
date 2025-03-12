@@ -15,17 +15,15 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
     <!-- Your custom CSS (if any) -->
-    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <link href="../../css/mobile.css" rel="stylesheet">
 
     @yield('styles')  <!-- This is where page-specific styles can be added -->
 </head>
 <body>
-
+    @include('components.navbar')
     <!-- Your Navbar, Sidebar, or any other content can go here -->
 
-    <div class="container">
-        @yield('content')  <!-- The content of the page will be injected here -->
-    </div>
+     @yield('content')  <!-- The content of the page will be injected here -->
 
     <!-- jQuery (via CDN) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
