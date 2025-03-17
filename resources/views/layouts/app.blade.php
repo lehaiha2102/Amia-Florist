@@ -20,13 +20,13 @@
     @yield('styles')  <!-- This is where page-specific styles can be added -->
 </head>
 <body>
-<div id="popup-overlay" class="popup-overlay">
+<!-- <div id="popup-overlay" class="popup-overlay">
         <div class="popup-content">
             <h2>Chúng tôi bán hoa theo giá thị trường!</h2>
             <p>Giá hoa có thể thay đổi theo mùa, vui lòng kiểm tra kỹ trước khi đặt hàng.</p>
             <button id="popup-btn" class="popup-btn">Đồng ý</button>
         </div>
-    </div>
+    </div> -->
     @include('components.navbar')
 
     @yield('content')  <!-- The content of the page will be injected here -->

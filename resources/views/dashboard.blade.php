@@ -18,8 +18,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Sản phẩm A</h5>
                         <p class="card-text">Mô tả ngắn gọn.</p>
+                        <div class="d-flex justify-content-between align-items-center gap-3">
                         <p class="text-primary fw-bold">100.000đ</p>
-                        <button class="btn btn-primary w-100">Mua ngay</button>
+                        <button><i class="bi bi-bag-plus-fill"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -29,8 +31,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Sản phẩm A</h5>
                         <p class="card-text">Mô tả ngắn gọn.</p>
+                        <div class="d-flex justify-content-between align-items-center gap-3">
                         <p class="text-primary fw-bold">100.000đ</p>
-                        <button class="btn btn-primary w-100">Mua ngay</button>
+                        <button><i class="bi bi-bag-plus-fill"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,8 +44,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Sản phẩm A</h5>
                         <p class="card-text">Mô tả ngắn gọn.</p>
+                        <div class="d-flex justify-content-between align-items-center gap-3">
                         <p class="text-primary fw-bold">100.000đ</p>
-                        <button class="btn btn-primary w-100">Mua ngay</button>
+                        <button><i class="bi bi-bag-plus-fill"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,8 +57,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Sản phẩm A</h5>
                         <p class="card-text">Mô tả ngắn gọn.</p>
+                        <div class="d-flex justify-content-between align-items-center gap-3">
                         <p class="text-primary fw-bold">100.000đ</p>
-                        <button class="btn btn-primary w-100">Mua ngay</button>
+                        <button><i class="bi bi-bag-plus-fill"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
