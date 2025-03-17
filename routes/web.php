@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,20 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::middleware(['auth'])->get('/', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::prefix('admin')->group(function () {
+        Route::middleware(['auth'])->group(function () {
+            Route::prefix('products')->name('products.')->controller(ProductsController::class)->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('create', 'create')->name('create');
+                Route::get('show/{id}', 'show')->name('show');
+                Route::get('edit/{idid}', 'edit')->name('edit');
+                Route::post('store', 'store')->name('store');
+            });
+
+            // Route::controller(UserController::class)->group(function () {
+            //     Route::get('/users', 'users');
+            // });
+        });
+});
+
