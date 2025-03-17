@@ -1,0 +1,186 @@
+$white: #ffffff;
+$black: #000000;
+$primary: #F5F5DC;
+$secondary: #1C2833;
+$accent: #FFD700;
+
+body {
+    background-color: $primary;
+    color: $secondary;
+}
+
+.text-primary {
+    color: $accent !important;
+}
+
+.bottom-spacing {
+    margin-bottom: 55px;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; // Tăng kích thước để dễ bấm hơn
+    height: 45px;
+    background-color: $white;
+    color: $secondary;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+// Định dạng menu bottom
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: $white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    
+    .icon-btn {
+        flex-grow: 1;
+        max-width: 80px;
+
+        &:hover,
+        &:active {
+            background-color: $accent;
+            color: $primary;
+            transform: translateY(-10px); // Nhấc nút lên khi hover/active
+            // clip-path: ellipse(100% 100% at 50% 120%); // Tạo hình bát úp ngược
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15); // Hiệu ứng đổ bóng
+        }
+    }
+    
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 75px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    i {
+        color: $white
+    }
+}  
+
+.product-card img {
+    object-fit: cover;
+    padding: 18px;
+}
+
+//TODO: Show vertify popup
+// SCSS cho pop-up toàn màn hình
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+    transition: clip-path 1.5s ease-in-out;
+
+    &.animate {
+        clip-path: inset(50% 0 50% 0);
+    }
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    background: #ff9800;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 100%;
+        background: #ff5722;
+        transition: all 1s ease-in-out;
+    }
+
+    &:hover::before {
+        width: 100%;
+        left: 0;
+    }
+}
+
+// Hiệu ứng chia màn hình
+.popup-overlay.animate .popup-btn {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff5722;
+    border-radius: 0;
+    animation: splitEffect 1.5s ease-in-out forwards;
+}
+
+@keyframes splitEffect {
+    0% {
+        clip-path: inset(0 50% 0 50%);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Ẩn nội dung chính ban đầu
+.hidden-content {
+    display: none;
+}
+
+//ebd vertify
