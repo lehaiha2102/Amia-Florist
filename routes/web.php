@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -38,13 +40,23 @@ Route::prefix('admin')->group(function () {
                 Route::get('/', 'index')->name('index');
                 Route::get('create', 'create')->name('create');
                 Route::get('show/{id}', 'show')->name('show');
-                Route::get('edit/{idid}', 'edit')->name('edit');
+                Route::get('edit/{id}', 'edit')->name('edit');
+                Route::put('update/{id}', 'update')->name('update');
                 Route::post('store', 'store')->name('store');
             });
 
-            // Route::controller(UserController::class)->group(function () {
-            //     Route::get('/users', 'users');
-            // });
+            Route::prefix('categories')->name('categories.')->controller(CategoriesController::class)->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('create', 'create')->name('create');
+                Route::get('show/{slug}', 'show')->name('show');
+                Route::get('edit/{slug}', 'edit')->name('edit');
+                Route::post('store', 'store')->name('store');
+                Route::put('update/{slug}', 'update')->name('update');
+            });
+
+            Route::controller(AdminController::class)->group(function () {
+                Route::get('/', 'index')->name('admin.index');
+            });
         });
 });
 
